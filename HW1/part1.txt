@@ -1,0 +1,21 @@
+1.安裝ubuntu 大概40GB
+2.開啟終端機
+3.sudo apt-get install kernel-package libncurses5-dev fakeroot wget bzip2
+4.cd /usr/src
+5.sudo wget https://github.com/torvalds/linux/archive/v4.15.tar.gz
+6.sudo tar -xvf v4.15.tar.gz
+7.cd linux-4.15/
+8.sudo cp /boot/config-4.15.0-45-generic
+9.sudo make menuconfig
+10.進入General setup
+11.選Local version 按select 打-學號
+12.Local version 下面那個選項按y 改成*
+13.按save再exit
+14.sudo apt-get install libssl-dev build-essential ncurses-dev xz-utils kernel-package
+15.sudo make -j 4
+16.sudo make bzImage
+17.sudo make modules -j $(nproc)
+18.sudo make modules_install
+19.sudo make install
+20.重啟動 按住shift會有一個選擇的地方
+20.1 點選第二個，進去後選學號那一個
